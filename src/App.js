@@ -1,24 +1,50 @@
-import logo from './logo.svg';
+import React, { Suspense, useContext } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+
+import Layout from './components/Layout/Layout';
+import Spinner from './components/UI/Spinner';
+
+// import logo from './logo.svg';
 import './App.css';
+import AuthContext from './store/auth-context';
+
+import Login from './pages/Login'
+import Patients from './pages/Patients'
+import PatientDetails from './pages/PatientDetail'
+
 
 function App() {
+  const authCtx = useContext(AuthContext)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Suspense fallback={<Spinner />}>
+        <Switch>
+          <Route path='/' exact>
+            {authCtx.isLoggedIn && <Redirect to='/pacientes' />}
+            {!authCtx.isLoggedIn && <Redirect to='/login' />}
+          </Route>
+          {!authCtx.isLoggedIn &&
+            <Route path='/login'>
+              <Login />
+            </Route>
+          }
+          {authCtx.isLoggedIn && 
+            <Route path='/pacientes' exact>
+              <Patients />
+            </Route>
+          }
+          {authCtx.isLoggedIn && 
+            <Route path='/pacientes/:patientId'>
+              <PatientDetails />
+            </Route>
+          }
+          <Route path='*'>
+            <Redirect to='/' />
+          </Route>
+        </Switch>
+      </Suspense>
+    </Layout>
   );
 }
 
