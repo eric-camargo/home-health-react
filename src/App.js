@@ -11,7 +11,7 @@ import AuthContext from './store/auth-context';
 import Login from './pages/Login'
 import Patients from './pages/Patients'
 import PatientDetails from './pages/PatientDetail'
-
+import Appointments from './pages/Appointments'
 
 function App() {
   const authCtx = useContext(AuthContext)
@@ -37,6 +37,16 @@ function App() {
           {authCtx.isLoggedIn && 
             <Route path='/pacientes/:patientId'>
               <PatientDetails />
+            </Route>
+          }
+          {authCtx.isLoggedIn && 
+            <Route path='/atendimento/:appointmentId'>
+              <Appointments />
+            </Route>
+          }
+          {authCtx.isLoggedIn && 
+            <Route path='/atendimentos'>
+              <Appointments />
             </Route>
           }
           <Route path='*'>

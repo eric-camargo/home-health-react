@@ -1,0 +1,61 @@
+.card {
+  background-color: white;
+  width: 200px;
+  height: 180px;
+  border-radius: 24px;
+  /* border: 4px solid rgba(60, 140, 195, 0.5); */
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  padding: 12px 8px;
+  margin: 24px;
+}
+
+.profile {
+  font-size: 16px;
+  color: #014575;
+  text-align: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  border: 4px solid rgba(60, 140, 195, 0.5);
+  width: 70px;
+  height: 70px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.profile h3 {
+  margin: 4px;
+}
+
+.infos {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.info {
+  text-align: center;
+}
+
+.info small {
+  font-size: 12px;
+  color: #24c5bd;
+}
+
+.info p{
+  margin: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #014575;
+}
+
+.info span {
+  font-size: 11px;
+  font-weight: 400;
+}

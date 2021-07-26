@@ -1,0 +1,9 @@
+main {
+  background-color: #D7ebf9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  display: flex;
+  font-family: 'Lato', sans-serif;
+}

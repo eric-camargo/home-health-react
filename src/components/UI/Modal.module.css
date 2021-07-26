@@ -1,5 +1,5 @@
 :root {
-  --left: 10%;
+  --left: 30%;
 }
 
 .backdrop {
@@ -14,12 +14,15 @@
 
 .modal {
   position: fixed;
+  height: 500px;
+  width: 500px;
   top: 20vh;
   left: var(--left);
   width: calc(100% - (2 * var(--left)));
-  background-color: white;
-  padding: 1rem;
-  border-radius: 25px;
+  background-color: #D8FEFC;
+  padding: 8px;
+  border: 8px solid white;
+  border-radius: 45px;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
   z-index: 30;
   animation: slide-up 300ms ease-out forwards;

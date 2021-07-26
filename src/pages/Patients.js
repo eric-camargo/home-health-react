@@ -9,10 +9,10 @@ function Patients(props) {
   const [showNewPatient, setShowNewPatient] = useState(false)
 
   const tableHeaders = [
-    { name: 'name', title: 'Nome do Paciente', type: 'text' },
-    { name: 'age', title: 'Idade', type: 'number' },
-    { name: 'address', title: 'Endereço', type: 'text' },
-    { name: 'city', title: 'Cidade', type: 'text'},
+    { accessor: 'name', Header: 'Nome do Paciente', type: 'text' },
+    { accessor: 'age', Header: 'Idade', type: 'number' },
+    { accessor: 'address', Header: 'Endereço', type: 'text' },
+    { accessor: 'city', Header: 'Cidade', type: 'text'},
   ]
 
   // TODO: Criar Endpoint
@@ -56,10 +56,9 @@ function Patients(props) {
     <Fragment>
       {showNewPatient && <NewPatient onClose={hideNewPatientHandler}/>}
       <Table 
-        header={tableHeaders}
+        columns={tableHeaders}
         data={DUMMYDATA}
-        headerButton={'Novo Paciente'}
-        detailButton={'Ver Mais'}
+        detailButton={'VER DETALHES'}
         onHeaderBtnClicked={showNewPatientHandler}
         onRowBtnClicked={viewDetailsHandler}
       />

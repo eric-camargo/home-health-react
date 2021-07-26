@@ -1,0 +1,54 @@
+:root {
+  --radius: 20px;
+}
+
+table {
+  margin: 8px;
+  width: 100%;
+  border-spacing: 0 0.5rem;
+}
+
+th {
+  color: #34769D;
+  font-size: 1.1rem;
+}
+
+tbody:before {
+  /* This doesn't work because of border-collapse */
+  line-height:1em;
+  content:".";
+  color:white; /* bacground color */
+  display:block;
+}
+
+tbody tr {
+  margin-top: 3rem;
+  justify-content: center;
+  height: 3rem;
+}
+
+tbody tr td {
+  background-color: white;
+  text-align: center;
+}
+
+tbody tr td:first-child {
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+tbody tr td:last-child {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  
+}
+
+button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  background-color: #014575;
+  color: white;
+  font-size: 12px;
+  font-weight:500;
+}

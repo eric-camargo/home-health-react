@@ -4,7 +4,7 @@ import classes from './Dashboard.module.css'
 
 function Dashboard() {
   return (
-    <div>
+    <div className={classes.dashboard}>
       
     </div>
   )
