@@ -1,5 +1,8 @@
-main {
+:root {
   background-color: #D7ebf9;
+}
+
+main {
   display: flex;
   align-items: center;
   justify-content: center;

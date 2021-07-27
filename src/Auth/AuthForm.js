@@ -6,6 +6,7 @@ import AuthContext from '../store/auth-context';
 import Spinner from '../components/UI/Spinner'
 import Button from '../components/UI/Button';
 
+import LOGO from '../assets/HomeHealthIcon.png';
 import classes from './AuthForm.module.css';
 
 
@@ -80,34 +81,35 @@ function AuthForm() {
 
   return (
     <section className={classes.loginCard}>
-      {/* <div>
-        <img src={LOGO} />
-      </div> */}
-      <div>
+      <div className={classes.imageSection}>
+        <img src={LOGO} alt="Logo Home Health"/>
+      </div>
+      <div className={classes.formSection}>
         <h1>{isLogin ? 'LOGIN' : 'CADASTRO'}</h1>
         <form onSubmit={submiHandler}>
           <div className={classes.input}>
             <label>Email</label>
             <input type="email" id="email" required ref={emailInputRef} />
           </div>
-          <div>
+          <div className={classes.formInput}>
             <label>Senha</label>
             <input type="password" id="password" required ref={passwordInputRef} />
           </div>
           {!isLogin && 
-          <div>
+          <div className={classes.formInput}>
             <label>Confirmar Senha</label>
             <input type="password" id="confirm-password" required ref={confirmPasswordInputRef} />
           </div>}
           <div className={classes.actions}>
-            {!isLoading && <Button type="submit">{isLogin ? 'LOGIN' : 'CADASTRE-SE'}</Button>}
+            {!isLoading && <button className={classes.submitBtn} type="submit">{isLogin ? 'LOGIN' : 'CADASTRE-SE'}</button>}
             {isLoading && <Spinner/>}
             <button
+              className={classes.link}
               type="button" 
               onClick={switchAuthModeHandler}>
                 {isLogin ? 'REGISTRE-SE' : 'IR PARA LOGIN'}
             </button>
-            {isLogin && <button type="button">ESQUECI A SENHA</button>}
+            {isLogin && <button className={classes.link} type="button">ESQUECI A SENHA</button>}
           </div>
         </form>
       </div>

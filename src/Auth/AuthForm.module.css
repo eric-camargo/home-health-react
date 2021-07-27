@@ -1,0 +1,77 @@
+.loginCard {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 1040px;
+  height: 700px;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px rgba(0,70,110, 0.3);
+}
+
+
+.imageSection {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: #D8FEFC;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.imageSection img {
+  width: 330px;
+  height: auto;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+form {
+  margin: 0 50px
+}
+
+input {
+  background-color: white;
+  border: 2px solid rgba(36, 197, 189, 0.25);
+  border-radius: 6px;
+  height: 2rem;
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+label, input {
+  display: block;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.submitBtn {
+  font-size: 18px;
+  padding: 0.75rem;
+}
+
+.link {
+  background-color: transparent;
+  background: none;
+  color: #012475;
+  font-size: 14px;
+  align-self: flex-end;
+}
