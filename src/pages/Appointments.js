@@ -9,13 +9,22 @@ function Appointments() {
   const history = useHistory()
   const [showNewAppointment, setShowNewAppointment] = useState(false)
 
-  const tableHeaders = [
+  const columns = [
     { accessor: 'name', Header: 'Nome do Paciente', type: 'text' },
     { accessor: 'date', Header: 'Data do Atendimento', type: 'date' },
     { accessor: 'specialty', Header: 'Especialidade', type: 'text'},
     { accessor: 'address', Header: 'Endereço', type: 'text' },
-    { accessor: 'city', Header: 'Cidade', type: 'text'}
+    { accessor: 'city', Header: 'Cidade', type: 'text'},
+    // { accessor: 'detailsBtn', Header: 'Ver Detalhes', type:'button'}
   ]
+
+  // const sub_columns = columns.slice(0)
+  // console.log(sub_columns)
+  // sub_columns.push({
+  //   id: 'button',
+  //   accessor: 'detailsBtn',
+  //   Cell: ({value}) => (<button onClick={console.log('clicked Button', value)}>Button</button>)
+  // })
 
   const DUMMYDATA = [
     {
@@ -24,7 +33,7 @@ function Appointments() {
       'date': '2021-08-18 12:00:00',
       'specialty': 'Fisioterapia',
       'address': 'street and number',
-      'city': 'Fortaleza/CE'
+      'city': 'Fortaleza/CE',
     },{
       'id': 1,
       'name': 'Joseph Maya',
@@ -43,6 +52,7 @@ function Appointments() {
   ]
 
   const viewDetailsHandler = (event) => {
+    console.log("clicked old")
     const id = event.target.id
     history.push(`/atendimentos/${id}`)
   }
@@ -58,7 +68,7 @@ function Appointments() {
     <Fragment>
       {showNewAppointment && <NewAppointment onClose={hideNewAppointmentHandler}/>}
       <Table
-        columns={tableHeaders}
+        columns={columns}
         data={DUMMYDATA}
         detailButton={'VER DETALHES'}
         onRowBtnClicked={viewDetailsHandler}

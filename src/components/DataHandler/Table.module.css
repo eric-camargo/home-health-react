@@ -1,10 +1,10 @@
 :root {
-  --radius: 20px;
+  --radius: 40px;
 }
 
 table {
   margin: 8px;
-  width: 100%;
+  width: calc(100% - 16px);
   border-spacing: 0 0.5rem;
 }
 

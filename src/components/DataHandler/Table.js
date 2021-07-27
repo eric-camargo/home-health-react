@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { Fragment, useMemo } from 'react'
 import BackgroundBoard from '../UI/BackgroundBoard'
 import { useTable, useSortBy } from 'react-table'
 
@@ -35,9 +35,11 @@ function Table(props) {
             return (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => {
+                  return (
                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render("Header")}
                   </th>
+                  )
                 })}
               </tr>
             )})}
@@ -54,6 +56,10 @@ function Table(props) {
                     </td>
                   )
                 })}
+                {props.detailButton &&
+                  <td>
+                    <button id={row.original.id} onClick={props.onRowBtnClicked}>{props.detailButton}</button>
+                  </td>}
               </tr>
             )
           })}

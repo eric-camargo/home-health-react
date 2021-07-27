@@ -19,19 +19,19 @@ function Patients(props) {
   // TODO: Adicionar Paginação com auto update on scroll
   const DUMMYDATA = [
     {
-      'id': 0,
+      'id': 82,
       'name': 'Marcos Conde',
       'age': 70,
       'address': 'street and number',
       'city': 'Fortaleza/CE'
     },{
-      'id': 1,
+      'id': 102,
       'name': 'Joseph Maya',
       'age': 71,
       'address': 'street 2 and number 2',
       'city': 'Fortaleza 2/CE'
     },{
-      'id': 2,
+      'id': 202,
       'name': 'Captain Rogers',
       'age': 72,
       'address': 'street 3 and number 3 ',
@@ -40,6 +40,7 @@ function Patients(props) {
   ]
 
   const viewDetailsHandler = (event) => {
+    console.log(event.target.id)
     const id = event.target.id
     history.push(`/pacientes/${id}`)
     }
